@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="BudgetPlaner.AddPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BudgetPlaner"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="537" Width="827">
+
+    <Grid Loaded="AddPageLoaded">
+
+        <Button Name="btn" Content="Добавить" Margin="446,471,0,0" VerticalAlignment="Top" Height="32" Width="96" Click="btn_Click"/>
+        <TextBox x:Name="boxSumma" HorizontalAlignment="Center" PlaceholderText="Сумма" TextChanged="boxSumma_TextChanged" TextWrapping="Wrap"  VerticalAlignment="Top" Width="256" Height="32" Margin="0,159,0,0"/>
+        <TextBox x:Name="boxComent" HorizontalAlignment="Center"  PlaceholderText="Коментарий"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="256" Margin="0,398,0,0" Height="37"/>
+        <StackPanel>
+            <ListView x:Name="TypeList" Height="103" Width="265" Margin="220,50,230,259" >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Type">
+                        <TextBlock x:Name="TextTypeList" Text="{x:Bind Path=Name}" FontSize="15"   FontWeight="Bold"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <StackPanel>
+            <ListView x:Name="CategoryList" Height="101"  Width="237" Margin="232,244,230,259">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Category">
+                        <TextBlock x:Name="TextCategoryList" Text="{x:Bind Path=Name}" FontSize="15"   FontWeight="Bold"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Выбирите тип операции" VerticalAlignment="Top" Height="19" Width="157"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,196,0,0" TextWrapping="Wrap" Text="Выбирите категорию операции:" VerticalAlignment="Top"/>
+        <Button Name="btn3" Content="Обноввить категории" Margin="379,355,0,0" VerticalAlignment="Top" Width="163" Click="btn3_Click" />
+
+
+
+
+    </Grid>
+</UserControl>

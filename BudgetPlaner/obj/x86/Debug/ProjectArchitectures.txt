@@ -1,0 +1,1 @@
+C:\Users\kiril\source\repos\BudgetPlaner\BudgetPlaner\BudgetPlaner.csproj;x86
